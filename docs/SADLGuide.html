@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SADL Users Guide &#8212; SADL Users Guide</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/guide.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SADL Users Guide</a><ul>
+<li><a class="reference internal" href="#class-a-is-a-class-b">CLASS_A is a CLASS_B</a></li>
+<li><a class="reference internal" href="#class-a-is-a-type-of-class-b">CLASS_A is a type of CLASS_B</a></li>
+<li><a class="reference internal" href="#property-a-describes-class-a-with-values-of-type-class-b">property_A describes CLASS_A with values of type CLASS_B</a></li>
+<li><a class="reference internal" href="#property-a-of-class-a-only-has-values-of-type-class-b">property_A of CLASS_A only has values of type CLASS_B</a></li>
+<li><a class="reference internal" href="#property-a-is-a-type-of-property-b">property_A is a type of property_B</a></li>
+<li><a class="reference internal" href="#propertya-describes-class-a-with-at-most-1-value">propertyA describes CLASS_A with at most 1 value</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sadl-users-guide">
+<h1>SADL Users Guide<a class="headerlink" href="#sadl-users-guide" title="Permalink to this headline">¶</a></h1>
+<section id="class-a-is-a-class-b">
+<h2>CLASS_A is a CLASS_B<a class="headerlink" href="#class-a-is-a-class-b" title="Permalink to this headline">¶</a></h2>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CLASS_B</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;CLASS_A&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p><strong>What does SADL check?</strong></p>
+<p>SADL will check that the instance <cite>CLASS_A</cite> follows the rules for the class
+<cite>CLASS_A</cite>.</p>
+</section>
+<section id="class-a-is-a-type-of-class-b">
+<h2>CLASS_A is a type of CLASS_B<a class="headerlink" href="#class-a-is-a-type-of-class-b" title="Permalink to this headline">¶</a></h2>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;CLASS_A&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subClassOf</span> <span class="n">rdf</span><span class="p">:</span><span class="n">resource</span><span class="o">=</span><span class="s2">&quot;CLASS_B&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>What does SADL check?</strong></p>
+<p>SADL will check that instances of the class <cite>CLASS_A</cite> follows both its own
+rules, and the rules of the superclass <cite>CLASS_B</cite>.</p>
+</section>
+<section id="property-a-describes-class-a-with-values-of-type-class-b">
+<h2>property_A describes CLASS_A with values of type CLASS_B<a class="headerlink" href="#property-a-describes-class-a-with-values-of-type-class-b" title="Permalink to this headline">¶</a></h2>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">ObjectProperty</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;property_A&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="n">domain</span> <span class="n">rdf</span><span class="p">:</span><span class="n">resource</span><span class="o">=</span><span class="s2">&quot;#CLASS_A&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="nb">range</span> <span class="n">rdf</span><span class="p">:</span><span class="n">resource</span><span class="o">=</span><span class="s2">&quot;#CLASS_B&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">ObjectProperty</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>What does SADL check?</strong></p>
+<p>SADL checks that instances of <cite>CLASS_A</cite> with properties <cite>property_A</cite> have a
+value that is a subtype of <cite>CLASS_B</cite>.</p>
+</section>
+<section id="property-a-of-class-a-only-has-values-of-type-class-b">
+<h2>property_A of CLASS_A only has values of type CLASS_B<a class="headerlink" href="#property-a-of-class-a-only-has-values-of-type-class-b" title="Permalink to this headline">¶</a></h2>
+<p>The following is generated regardless of whether <cite>property_A</cite> is already known
+to describe values of type <cite>CLASS_A</cite>, values of some supertype of <cite>CLASS_A</cite>, or
+some entirely unrelated class.</p>
+<p>However, if <cite>property_A</cite> was defined with domain <cite>CLASS_C</cite>, and <cite>CLASS_A</cite> has no
+subtype relationship with <cite>CLASS_C</cite>, then at use sites, SADL will complain that
+<cite>CLASS_A</cite> is not in the domain of <cite>property_A</cite>.</p>
+<p>Likewise, this is generated regardless of the relationship between <cite>CLASS_B</cite> and
+any other previously-known range of any property <cite>property_A</cite>.</p>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;CLASS_A&quot;</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subClassOf</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Restriction</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">allValuesFrom</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;CLASS_B&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">allValuesFrom</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">onProperty</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">ObjectProperty</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;property_A&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">onProperty</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">Restriction</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subClassOf</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>NOTE: if <cite>property_A</cite> is not known to SADL prior to this declaration, then
+<cite>rdf:ID=”property_A”</cite> is replaced with <cite>rdf:resource=”#property_A”</cite>.</p>
+<p><strong>What does SADL check?</strong></p>
+<p>Nothing.</p>
+</section>
+<section id="property-a-is-a-type-of-property-b">
+<h2>property_A is a type of property_B<a class="headerlink" href="#property-a-is-a-type-of-property-b" title="Permalink to this headline">¶</a></h2>
+<p>The following is produced regardless of whether the domains and ranges of
+<cite>property_A</cite> and <cite>property_B</cite> are compatible in any way.  At use site, SADL will
+respect the range of the original declaration of <cite>property_A</cite>.</p>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">ObjectProperty</span> <span class="n">rdf</span><span class="p">:</span><span class="n">about</span><span class="o">=</span><span class="s2">&quot;#property_A&quot;</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subPropertyOf</span> <span class="n">rdf</span><span class="p">:</span><span class="n">resource</span><span class="o">=</span><span class="s2">&quot;#property_B&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">ObjectProperty</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>What does SADL check?</strong></p>
+<p>Nothing.</p>
+</section>
+<section id="propertya-describes-class-a-with-at-most-1-value">
+<h2>propertyA describes CLASS_A with at most 1 value<a class="headerlink" href="#propertya-describes-class-a-with-at-most-1-value" title="Permalink to this headline">¶</a></h2>
+<p>OWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;CLASS_A&quot;</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subClassOf</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">Restriction</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">maxCardinality</span> <span class="n">rdf</span><span class="p">:</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#int&quot;</span><span class="o">&gt;</span>
+                <span class="mi">1</span>
+            <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">maxCardinality</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">onProperty</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">owl</span><span class="p">:</span><span class="n">DatatypeProperty</span> <span class="n">rdf</span><span class="p">:</span><span class="n">ID</span><span class="o">=</span><span class="s2">&quot;propertyA&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">onProperty</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">Restriction</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">rdfs</span><span class="p">:</span><span class="n">subClassOf</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">owl</span><span class="p">:</span><span class="n">Class</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>What does SADL check?</strong></p>
+<p>Nothing.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

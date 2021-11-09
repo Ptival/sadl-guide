@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    overflow: none;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    overflow: none;
+    padding: 0;
+}
+
+.document div {
+    display: flex;
+}
+
+div.sphinxsidebar {
+    height: 100vh;
+    margin: 0;
+    width: 20%;
+}
+
+div.sphinxsidebarwrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+div.sphinxsidebar {
+    overflow-y: scroll;
+}
+
+div.sphinxsidebar ul {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+div.sphinxsidebar ul {
+    list-style: square;
+}
+
+div.bodywrapper {
+    margin: 0;
+}
+
+div.document {
+    height: 100vh;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: none;
+    width: 80%;
+}
+
+div.documentwrapper {
+    height: 100%;
+    overflow-y: scroll;
+}
